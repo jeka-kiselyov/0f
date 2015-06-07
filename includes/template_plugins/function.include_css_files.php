@@ -103,7 +103,15 @@ function smarty_function_include_css_files($params, $template)
     $template->smarty->tpl_vars['head_css_already_included'] = $already_included;
 
     if ($has_less)
-        $template->smarty->tpl_vars['head_js']->value[] = '//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js';
+    {
+        $has_already = false;
+        foreach ($template->smarty->tpl_vars['head_js']->value as $already)
+            if ($already == '//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js')
+                $has_already = true;
+
+        if (!$has_already)
+            $template->smarty->tpl_vars['head_js']->value[] = '//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js';
+    }
 
 
     return $ret;
