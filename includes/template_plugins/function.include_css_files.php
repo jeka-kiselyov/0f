@@ -72,10 +72,10 @@ function smarty_function_include_css_files($params, $template)
     }
 
 
+    $has_less = false;
+    
     if (!$displayed)
     {
-        $has_less = false;
-
         for ($i = $already_included; $i < count($template->smarty->tpl_vars['head_css']->value); $i++)
         {
             $file = $template->smarty->tpl_vars['head_css']->value[$i];

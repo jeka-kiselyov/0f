@@ -19,6 +19,10 @@
     "underscore": "1.7.0",
     "ckeditor": "4.4.4",
     "bootstrap": "3.2.0",
-    "bootstrap-multiselect": "~0.9.10"
+    "bootstrap-multiselect": "~0.9.10",
+    "bootstrap-less": "~3.3.4"
+  },
+  "devDependencies": {
+    "bootstrap-less": "~3.3.4"
   }
 }

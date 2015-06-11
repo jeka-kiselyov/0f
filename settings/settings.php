@@ -7,7 +7,7 @@
  if (ENVIRONMENT_SERVER == 'localhost')
  {
 	$settings['site_path'] = "http://framework.com";
-	$settings['minify_css_merge'] = false;
+	$settings['minify_css_merge'] = true;
 	$settings['minify_js_merge'] = false;
  }
  else

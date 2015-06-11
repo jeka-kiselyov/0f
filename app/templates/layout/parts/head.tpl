@@ -20,7 +20,10 @@
 
 	{add_js file="vendors/jquery/dist/jquery.min" prepend=true}
 	{* Prepend - this scripts will be included first, even if you've added something in controller *}
-	{add_js file="vendors/bootstrap/dist/js/bootstrap.min" prepend=true}
+
+	{add_js file="vendors/bootstrap-less/js/modal" prepend=true}
+
+
 	{add_js file="vendors/underscore/underscore-min" prepend=true}
 	{add_js file="vendors/backbone/backbone" prepend=true}
 	{add_js file="vendors/backbone.paginator/lib/backbone.paginator.min" prepend=true}
@@ -51,10 +54,14 @@
 	{/if}
 	</script>
 
-	{add_css file="vendors/bootstrap/dist/css/bootstrap.min" prepend=true}
+	{add_css file="vendors/bootstrap-less/less/bootstrap.less" prepend=true}
+	{add_css file="vendors/bootstrap-less/less/theme.less" prepend=true}
+
+	{include_css_files}
+
 	{add_css file="css/main.less" prepend=true}
 
 	{include_css_files}
 	
-	{include_js_files}
+	{include_js_files} {* In case there's .less files and //cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js script was included by last include_css_files *}
 </head>
